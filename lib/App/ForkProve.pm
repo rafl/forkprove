@@ -13,7 +13,7 @@ use App::ForkProve::SourceHandler;
 our @Blacklists = qw( Test::SharedFork );
 our %Data;
 
-sub run {
+sub process_preloads {
     my($class, @args) = @_;
 
     # Probably have to copy to @ARGV so that App::Prove can mangle it
@@ -68,7 +68,9 @@ sub run {
         push @{ $Data{$mod} }, tell($fh)
             if $Data{$mod}[0];
     }
+}
 
+sub run {
     my $app = App::Prove->new;
     $app->process_args(@ARGV);
     $app->run;

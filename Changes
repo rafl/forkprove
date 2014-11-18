@@ -2,6 +2,9 @@ Revision history for Perl extension App::ForkProve
 
 {{$NEXT}}
 
+v0.4.11  2014-11-14 10:44:12 EST
+        - Preload modules during compile time
+
 v0.4.10  2014-06-20 11:20:07 PDT
         - Non-zero exit codes should also cause failure, even if not indicated
           by the TAP (reported by shumphrey)
